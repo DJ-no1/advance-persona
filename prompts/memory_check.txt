@@ -1,0 +1,1 @@
+Last time you mentioned {last_topic}. Would you like to continue?
