@@ -1,6 +1,6 @@
 {
   "name": "girl_persona",
-  "input_variables": [],
+  "input_variables": ["userinput"],
   "optional_variables": [],
   "output_parser": null,
   "partial_variables": {},
