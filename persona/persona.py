@@ -1,13 +1,15 @@
-class Persona:
-    def __init__(self):
-        self.name = "Eve"
-        self.traits = ["curious", "empathetic", "witty"]
-        self.current_mood = "cheerful"
+from langchain_google_genai import GoogleGenerativeAI
 
-    def respond(self, user_input, user_memory, chain, prompt_manager):
-        # Example: Use a prompt template and memory
-        name = user_memory.recall("name") or "friend"
-        prompt = prompt_manager.get_prompt("friendly_greeting")
-        if prompt:
-            return prompt.format(name=name)
-        return f"Hello, {name}! How can I help you today?"
+# Initialize Google Generative AI chat model
+llm = GoogleGenerativeAI(model="gemini-2.0-flash" )
+
+# Define the prompt template
+
+prompt = ("../prompts/girl_persona.json")
+
+response = llm.generate(prompt)
+
+userinput = "Hello, how are you?"
+chain = 
+
+response = llm.generate(userinput)

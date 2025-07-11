@@ -1,0 +1,5 @@
+{
+  "input_variables": ["name"],
+  "template": "Hey {name}, how can I help you today?",
+  "template_format": "f-string"
+}

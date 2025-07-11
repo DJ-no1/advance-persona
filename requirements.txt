@@ -1,1 +1,7 @@
 langchain
+google-generativeai
+python-dotenv
+streamlit
+
+# Google Gemini (PaLM) Integration
+langchain-google-genai
