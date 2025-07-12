@@ -9,11 +9,24 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash" )
 
 # Define the prompt template
 
-prompt = load_prompt("prompts/girl_persona.json")
+prompt = load_prompt("prompts/day2.json")
 
-userinput = "Hello, how are you?"
+
 chain = prompt | llm
 
-result = chain.invoke({"userinput": userinput})
+conversation_history = []
 
-print(result.content)
+
+while True:
+    user_message = input("You: ")
+    if user_message == "exit":
+        print("Exiting the conversation.")
+        print(f"Conversation History:" + str(conversation_history))
+        break
+    else:
+        current_time = "5:36 PM"  
+        result = chain.invoke({"User": user_message, "Time": current_time }, conversation_history=conversation_history)
+        print("Persona:", result.content)
+
+    # Update conversation history
+    conversation_history.append({"User": user_message, "Time": current_time, "Response": result.content})
